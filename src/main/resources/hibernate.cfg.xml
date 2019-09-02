@@ -9,7 +9,7 @@
 
         <!-- PosgreSQL database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/shop_db_ma</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/shop_ma_hibernate</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">qwerty</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
@@ -19,16 +19,17 @@
 
         <!--Echo all executed SQL to stdout-->
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 
         <!-- ENTITIES -->
-        <mapping package="com.mainacad.hibernate.model"/>
-        <mapping class="com.mainacad.hibernate.model.Cart"/>
-        <mapping class="com.mainacad.hibernate.model.Item"/>
-        <mapping class="com.mainacad.hibernate.model.Order"/>
-        <mapping class="com.mainacad.hibernate.model.User"/>
+        <mapping package="com.mainacad.hibernateSkeleton.model"/>
+        <mapping class="com.mainacad.hibernateSkeleton.model.Cart"/>
+        <mapping class="com.mainacad.hibernateSkeleton.model.Item"/>
+        <mapping class="com.mainacad.hibernateSkeleton.model.Order"/>
+        <mapping class="com.mainacad.hibernateSkeleton.model.User"/>
     </session-factory>
 
 </hibernate-configuration>

@@ -1,4 +1,4 @@
-package com.mainacad.hibernate;
+package com.mainacad.hibernateSkeleton;
 
 public class App 
 {
