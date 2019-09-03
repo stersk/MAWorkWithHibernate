@@ -70,9 +70,10 @@ class UserDAOTest {
     @Test
     void testSave() {
         User user = new User("ignatenko2207", "123456", "Alex", "Ignatenko");
+        user = UserDAO.save(user);
+
         users.add(user);
 
-        UserDAO.save(user);
         assertNotNull(user.getId());
 
         User checkedItem = UserDAO.findById(user.getId());

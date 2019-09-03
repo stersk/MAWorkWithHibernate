@@ -55,9 +55,10 @@ class ItemDAOTest {
   @Test
   void testSave() {
     Item item = new Item(TEST_ITEM_CODE + "_", "Kellys Spider 50 (2015)", 1500000);
+
+    item = ItemDAO.save(item);
     items.add(item);
 
-    ItemDAO.save(item);
     assertNotNull(item.getId());
 
     Item checkedItem = ItemDAO.findById(item.getId());

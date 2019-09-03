@@ -83,8 +83,7 @@ public class CartDAO {
 
     Predicate cartByUser = builder.equal(root.get("user"), user);
     Predicate openCart = builder.equal(root.get("closed"), false);
-    criteriaQuery.where(builder.and(cartByUser));
-    criteriaQuery.where(builder.and(openCart));
+    criteriaQuery.where(builder.and(cartByUser, openCart));
 
     Query<Cart> query = session.createQuery(criteriaQuery);
     Cart cart = query.stream().findFirst().orElse(null);
@@ -106,6 +105,7 @@ public class CartDAO {
     Join<Order, Item> join = root.join("item", JoinType.LEFT);
 
     criteriaQuery.select(builder.sum(builder.prod(root.get("amount"), join.get("price"))).alias("sum"));
+    criteriaQuery.where(builder.equal(root.get("cart"), cart));
 
     Query<Number> query = session.createQuery(criteriaQuery);
     Number sum = query.stream()

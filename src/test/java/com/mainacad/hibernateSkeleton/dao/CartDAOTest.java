@@ -89,7 +89,7 @@ class CartDAOTest {
   @Test
   void testSave() {
     Cart checkedCart = new Cart(1565024867119L, false, users.get(0));
-    CartDAO.save(checkedCart);
+    checkedCart = CartDAO.save(checkedCart);
     carts.add(checkedCart);
 
     assertNotNull(checkedCart);
