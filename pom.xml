@@ -19,7 +19,7 @@
         <lombok.version>1.18.8</lombok.version>
         <postgresql.jdbc.version>42.2.6</postgresql.jdbc.version>
         <servlet-api.version>2.3.3</servlet-api.version>
-        <hibernate-version>5.4.4.Final</hibernate-version>
+        <hibernate-version>5.4.24.Final</hibernate-version>
     </properties>
 
     <dependencies>
